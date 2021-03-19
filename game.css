@@ -1,0 +1,44 @@
+
+body{
+    background-color: lightskyblue;
+}
+
+.red {  background-color: rgba(255, 0, 0, 0.87); }
+.yellow {  background-color: rgba(255, 255, 0, 0.856); }
+.blue {  background-color: rgba(0, 0, 255, 0.849); }
+.purple {  background-color: purple; }
+.green {  background-color: green;  }
+div#tool_bar {
+    height: 50px;
+    width: 650px;
+    padding: 5px;
+    margin: 10px auto;
+    border: 1px solid black;
+}
+div#game_board {
+    display: flex;
+    height:595px;
+    width: 925px;
+    border: 10px outset brown;
+    border-radius: 3px;
+    margin: 0 auto;
+    padding-top: 10px;
+    background-color: #003400;
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+div.flex_item {
+    border: 5px outset white;
+    border-radius: 25px;
+    padding: 5px;
+    width: 380px;
+    height: 65px;
+    margin: 7px;
+    line-height:75px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
