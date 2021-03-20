@@ -1,3 +1,16 @@
+<?php 
+    
+    include("util.php");
+    
+    session_handler();
+    #session_start();
+    
+    // $questions = $data["questions"];
+    // $currQ = $data["current_question"];
+    // $score = $data["score"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +25,20 @@
     </div>
 
     <div id="game_board">
+        <form action="gameplay-next" method="POST">
+            <div class="question"><? echo $currQ?></div>
+        </form>
         
+        <!-- <div class="flex_item red"><a href="g5subjects.php">5th Grade Subject </a></div>
         <div class="flex_item red"><a href="g5subjects.php">5th Grade Subject </a></div>
-        <div class="flex_item red"> 5th Grade Subject</div>
-        <div class="flex_item yellow"> 4th Grade Subject</div>
-        <div class="flex_item yellow"> 4th Grade Subject</div>
-        <div class="flex_item blue">3rd Grade Subject</div>
-        <div class="flex_item blue">3rd Grade Subject</div>
-        <div class="flex_item purple">2nd Grade Subject</div>
-        <div class="flex_item purple">2nd Grade Subject</div>
-        <div class="flex_item green">1st Grade Subject</div>
-        <div class="flex_item green">1st Grade Subject</div>
+        <div class="flex_item yellow"><a href="g4subjects.php"> 4th Grade Subject </a></div>
+        <div class="flex_item yellow"><a href="g4subjects.php"> 4th Grade Subject </a></div>
+        <div class="flex_item blue"><a href="g3subjects.php"> 3rd Grade Subject</a></div>
+        <div class="flex_item blue"><a href="g3subjects.php"> 3rd Grade Subject</a></div>
+        <div class="flex_item purple"><a href="g2subjects.php">2nd Grade Subject</a></div>
+        <div class="flex_item purple"><a href="g2subjects.php">2nd Grade Subject</a></div>
+        <div class="flex_item green"><a href="g1subjects.php">1st Grade Subject</a></div>
+        <div class="flex_item green"><a href="g1subjects.php">1st Grade Subject</a></div> -->
     </div>
 </body>
 </html>
