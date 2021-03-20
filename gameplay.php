@@ -8,6 +8,8 @@
     // $questions = $data["questions"];
     // $currQ = $data["current_question"];
     // $score = $data["score"];
+    print_r($current_question);
+    
 
 ?>
 
@@ -26,7 +28,7 @@
 
     <div id="game_board">
         <form action="gameplay-next" method="POST">
-            <div class="question"><? echo $currQ?></div>
+            <div class="question"><?php print_r($current_question);?></div>
         </form>
         
         <!-- <div class="flex_item red"><a href="g5subjects.php">5th Grade Subject </a></div>
