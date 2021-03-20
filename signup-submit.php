@@ -31,7 +31,7 @@
     #$new["state"] = "running";
    
     $question_stack = get_questions();
-    $current_question = array_pop($question_stack);
+    $current_question = array_pop($question_stack["question"]);
 
     write_user_data($username, $new);
     store_question_stack($username, $question_stack);
