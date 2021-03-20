@@ -28,7 +28,7 @@
 
     <div id="game_board">
         <form action="gameplay-next" method="POST">
-            <div class="question"><?php print_r($current_question);?></div>
+            <div class="question"><?php print_r($current_question["question"]);?></div>
         </form>
         
         <!-- <div class="flex_item red"><a href="g5subjects.php">5th Grade Subject </a></div>
