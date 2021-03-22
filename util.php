@@ -1,61 +1,6 @@
 <?php
     function get_questions() {
         $quiz = array(array());
-        // $quiz = array(
-        //     "q1" => array(
-        //         "question" => "",
-        //         "points" => "",
-        //         "answer" => "",
-        //         "choice1" => "",
-        //         "choice2" => "",
-        //         "choice3" => "",
-        //     ),
-
-        //     "q1" => array(
-        //         "question" => "",
-        //         "points" => "",
-        //         "answer" => "",
-        //         "choice1" => "",
-        //         "choice2" => "",
-        //         "choice3" => "",
-        //     ),
-
-        //     "q1" => array(
-        //         "question" => "",
-        //         "points" => "",
-        //         "answer" => "",
-        //         "choice1" => "",
-        //         "choice2" => "",
-        //         "choice3" => "",
-        //     ),
-
-        //     "q1" => array(
-        //         "question" => "",
-        //         "points" => "",
-        //         "answer" => "",
-        //         "choice1" => "",
-        //         "choice2" => "",
-        //         "choice3" => "",
-        //     ),
-
-        //     "q1" => array(
-        //         "question" => "",
-        //         "points" => "",
-        //         "answer" => "",
-        //         "choice1" => "",
-        //         "choice2" => "",
-        //         "choice3" => "",
-        //     ),
-
-        //     "q1" => array(
-        //         "question" => "",
-        //         "points" => "",
-        //         "answer" => "",
-        //         "choice1" => "",
-        //         "choice2" => "",
-        //         "choice3" => "",
-        //     ),
-
         array_pop($quiz);
         $qs = file("./QA.txt");
         for($i = 0; $i<count($qs); ++$i){
@@ -66,8 +11,8 @@
             $quiz["q".$i]["choice1"] = $info[3];
             $quiz["q".$i]["choice2"] = $info[4];
             $quiz["q".$i]["choice3"] = $info[5];
+            $quiz["q".$i]["choice4"] = $info[6];
         }
-
         return $quiz;
     }
     // $quiz = array(array());
@@ -134,6 +79,8 @@
 		$data = read_user_data($username);
         $question_stack = get_question_stack($username);
         $current_question = get_current_question($username);
+        #print_r($current_question);
+        #echo $username;
     }
      
     function read_user_data($username): array {
@@ -143,7 +90,7 @@
 
 		foreach ($array as $item) {
 			$split = explode(':', $item);
-			$output[$split[0]] = $split[1];
+			$output[$split[0]] = $split[1] ?? null;
 		}
 
 		return $output;

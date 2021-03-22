@@ -1,5 +1,8 @@
 <?php 
+    include "util.php";
     session_handler();
+    echo $current_question["answer"];
+    echo $_POST["choice"];
 ?>
 
 <!DOCTYPE html>
@@ -12,15 +15,29 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="tool_bar">
-    </div>
-
-    <div id="game_board">
         <?php
-            echo $_POST["choice"];
+            if(isset($_POST["choice"]) && ($_POST["choice"] == $current_question["answer"])){
+                $data["state"] = "runnning";
+                $data["score"] = $data["score"] += (int)$current_question["points"];
+                #echo $data["score"];
+                $current_question = array_pop($question_stack);
+                write_user_data($username, $data);
+                print_r($question_stack);
+                store_question_stack($username, $question_stack);
+                store_current_question($username, $current_question);
+                
+            }
+            if((isset($_POST["choice"]) && ($_POST["choice"] != $current_question["answer"]))){
+            }
         ?>
+    <div id="tool_bar">
+        <div class="tb_item"> Score: <?php echo $data["score"];?></div>
+        <div class="tb_item"> Logout </div>
+        <div class="tb_item"> Main menu </div>
+    </div>
         
     <div id="game_board">
+       
         <form action="gameplay-next" method="POST">
             <div class="question"><?php print_r($current_question["question"]);?></div>
             <div id="choice_box">
