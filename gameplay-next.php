@@ -16,22 +16,20 @@
     </div>
 
     <div id="game_board">
+        <?php
+            echo $_POST["choice"];
+        ?>
+        
+    <div id="game_board">
         <form action="gameplay-next" method="POST">
             <div class="question"><?php print_r($current_question["question"]);?></div>
             <div id="choice_box">
-                <div class="flex_item red"><input type="submit" name="choice1" value="<?php echo $current_question["choice1"];?>"/></div>
-                <div class="flex_item yellow"><input type="submit" name="choice2" value="<?php echo $current_question["choice2"];?>"/></div>
-                <div class="flex_item blue" > <input type="submit" name="choice3" value="<?php echo $current_question["choice3"];?>"/></div>
-                <div class="flex_item green"> <input type="submit" name="choice4" value="<?php echo $current_question["choice4"];?>"/></div>
+                <input type="submit" class="red" name="choice" value="<?php echo $current_question["choice1"];?>"/>
+                <input type="submit" class="yellow" name="choice" value="<?php echo $current_question["choice2"];?>"/>
+                <input type="submit" class="blue" name="choice" value="<?php echo $current_question["choice3"];?>"/>
+                <input type="submit" class="green" name="choice" value="<?php echo $current_question["choice4"];?>"/>
             </div>
-            <!-- <div class="flex_item red"><input type="submit" name="choice1" value="<?php echo $current_question["choice1"];?>"/></div>
-            <div class="flex_item yellow"><input type="submit" name="choice2" value="<?php echo $current_question["choice2"];?>"/></div>
-            <div class="flex_item blue" > <input type="submit" name="choice3" value="<?php echo $current_question["choice3"];?>"/></div>
-            <div class="flex_item green"> <input type="submit" name="choice4" value="<?php echo $current_question["choice4"];?>"/></div> -->
-            <!-- <input type="submit" name="choice1" value="<?php echo $current_question["choice1"];?>"/>
-            <input type="submit" name="choice2" value="<?php echo $current_question["choice2"];?>"/>
-            <input type="submit" name="choice3" value="<?php echo $current_question["choice3"];?>"/>
-            <input type="submit" name="choice4" value="<?php echo $current_question["choice4"];?>"/> -->
+            
         </form>
         
 

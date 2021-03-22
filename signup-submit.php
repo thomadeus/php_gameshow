@@ -33,7 +33,7 @@
     $question_stack = get_questions();
     $current_question = array_pop($question_stack);
 
-    write_user_data($username, $new);
+    #write_user_data($username, $new);
     store_question_stack($username, $question_stack);
     store_current_question($username, $current_question);
     #session_save_path("session");
