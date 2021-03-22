@@ -21,7 +21,7 @@
 <body>
     <div id="tool_bar">
         <div class="tb_item"> Score: <?php echo $data["score"];?></div>
-        <form action="toolbar.php" method="POST">
+        <form action="gameplay-submit.php" method="POST">
             <input type="submit" class="tb_item tb_h" name="tb_button" value="Logout"/>
             <input type="submit" class="tb_item tb_h" name="tb_button" value="Main Menu"/>
              <!-- <div class="tb_item"> Logout </div>

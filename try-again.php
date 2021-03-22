@@ -1,5 +1,6 @@
 <?php
     include 'util.php';
+    session_handler();
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,10 +1,10 @@
 
 <?php
     include 'util.php';
-    session_handler();
     $leaderboard = read_leaderboard();
     $leaderboard_keys = array_keys($leaderboard);
-    $leaderboard_values = array_keys($leaderboard);
+    $leaderboard_values = array_values($leaderboard);
+
 ?>
 <!DOCTYPE html>
 <html>

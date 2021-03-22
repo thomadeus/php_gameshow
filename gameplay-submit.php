@@ -1,32 +1,38 @@
 <?php  
     include "util.php";
     session_handler();
-    echo $current_question["answer"];
-    echo $_POST["choice"];
+    // echo $current_question["answer"];
+    // echo $_POST["choice"];
+
     #CORRECT CASEisset($_POST["choice"]) && 
     if( (isset($_POST["choice"])) && ($_POST["choice"] == $current_question["answer"])){
         $data["state"] = "runnning";
         $data["score"] = $data["score"] += (int)$current_question["points"];
         #echo $data["score"];
         echo "correct";
+
+        #ANSWERED ALL QUESTIONS CORRECTLY
         if(count($question_stack) == 0){
             $data["state"] = "winner";
+            $data["score"] = $data["score"];
             write_user_data($username, $data);
             submit_score($username, $data["score"]);
             header('Location: winner.php');
             exit();
         }
+
+        #GET NEXT QUESTION AND PROCEEDS
         $current_question = array_pop($question_stack);
         write_user_data($username, $data);
-        #print_r($question_stack);
         store_question_stack($username, $question_stack);
         store_current_question($username, $current_question);
         header('Location: gameplay.php');
         exit();
     }
     #INCORRECT CASE
-    if(($_POST["choice"] != $current_question["answer"])){
+    if( (isset($_POST["choice"])) && ($_POST["choice"] != $current_question["answer"])){
         #go to lost game retry page
+        submit_score($username, $data["score"]);
         echo "wrong choice";
         header('Location: try-again.php');
         exit();
@@ -40,6 +46,7 @@
         }
         else{
             header('Location: logout.php');
+            exit();
         }
 
     }
