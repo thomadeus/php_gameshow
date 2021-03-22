@@ -3,7 +3,7 @@
         $quiz = array(array());
         array_pop($quiz);
         $qs = file("./QA.txt");
-        for($i = 0; $i<count($qs); ++$i){
+        for($i = 0; $i<count($qs); $i++){
             $info = explode(",", $qs[$i]);
             $quiz["q".$i]["question"] = $info[0];
             $quiz["q".$i]["points"] = $info[1];
@@ -15,6 +15,8 @@
         }
         return $quiz;
     }
+
+
     // $quiz = array(array());
     // array_pop($quiz);
     // $qs = file("./QA.txt");
@@ -147,22 +149,21 @@
 	}
 
     
-	function write_leaderboard($gamemode, $array) {
+	function write_leaderboard($username, $score) {
 
 		$output_string = "";
-		
+		$array = array($username => $score);
 		foreach ($array as $key => $value) {
 			$output_string = $output_string . PHP_EOL . $key . ':' . $value;
 		}
 
-		$file_location = get_gamemode_file_location($gamemode);
-		file_put_contents($file_location, $output_string);
+		file_put_contents('leaderboards.txt', $output_string, FILE_APPEND);
 
 	}
 
-	function submit_score($gamemode, $username, $score) {
+	function submit_score($username, $score) {
 
-		$leaderboard = read_leaderboard($gamemode);
+		$leaderboard = file('leaderboards.txt');
 
 		$last_key = array_key_last($leaderboard);
 		if ($leaderboard[$last_key] < $score) {
@@ -170,33 +171,18 @@
 			arsort($leaderboard);
 			$last_key = array_key_last($leaderboard);
 			unset($leaderboard[$last_key]);
-			write_leaderboard($gamemode, $leaderboard);
+			write_leaderboard($username, $score);
 		}
 		
-
 	}
 
-    function get_gamemode_file_location($gamemode): string {
 
-		$leaderboard_files = array (
-			'endless' => 'scores/endless.txt',
-			'easy' => 'scores/easy.txt',
-			'normal' => 'scores/normal.txt',
-			'hard' => 'scores/hard.txt'
-		);
+	function read_leaderboard(): array {
 
-		return $leaderboard_files[$gamemode];
+		if (file_exists('leaderboards.txt')) {
 
-	}
-
-	function read_leaderboard($gamemode): array {
-
-		$file_location = get_gamemode_file_location($gamemode);
-		if (file_exists($file_location)) {
-
-			$file_contents = file_get_contents($file_location);
+			$file_contents = file_get_contents('leaderboards.txt');
 			$scores = explode(PHP_EOL, $file_contents);
-
 			foreach ($scores as $score) {
         		$score = explode(":", $score);
         		$score_list[$score[0]] = $score[1];

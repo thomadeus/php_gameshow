@@ -46,6 +46,12 @@ div#tool_bar {
     float: right;
     font-family: monospace;
 }
+
+.tb_h {
+    height: 44px;
+}
+
+
 div#choice_box{
     height: 600px;
     width: 500px;
@@ -97,7 +103,7 @@ div.question {
     text-align: center;
 }
 
-input[type="submit"] {
+.choice{
     border: 5px outset white;
     border-radius: 25px;
     padding: 5px;
@@ -110,6 +116,20 @@ input[type="submit"] {
     font-size: 15px;
     text-align: center;
 }
+/* input[type="submit"] {
+    border: 5px outset white;
+    border-radius: 25px;
+    padding: 5px;
+    width: 380px;
+    height: 65px;
+    margin: 7px;
+    /* line-height:75px; */
+    /* color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center; 
+}*/
+
 input[type="submit"]:hover{
     border-color: #faf604;
 }
