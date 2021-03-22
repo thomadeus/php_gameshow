@@ -28,8 +28,7 @@
     session_start();
     $_SESSION['username'] = $username;
     write_user_data($username, $new);
-    #$new["state"] = "running";
-   
+    
     $question_stack = get_questions();
     $current_question = array_pop($question_stack);
 

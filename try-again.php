@@ -10,11 +10,10 @@
 </head>
 
 <body class="index">
-    <h1>Are You Smarter Than A Fifth Grader</h1>
-    <div><a href="signup.php">New Player<br></a></div>
-    <div><a href="login.php">Returning<br></a></div>
-    <div><a href="leaderboards.php">Leaderboards<br></a></div>
-    <br>
+    <h1>You are not smarter than a fifth grader!</h1>
+    <h2>Try again?</h2>
+    <div><a href="./new-game.php"> I SWEAR IM SMARTER THAN A FIFTH GRADER </a> </div>
+    <div><a href="./index.php"> No thanks, I'm only 9 years old anyways. </a> </div>
     <p>Results and page (C) Copyright blabla Inc.</p>
     <br>
 </body>
