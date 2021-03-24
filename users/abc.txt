@@ -1,0 +1,3 @@
+
+state:runnning
+score:50
