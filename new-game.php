@@ -2,9 +2,7 @@
     include 'util.php';
     session_handler();
     #session_start();
-    // $_SESSION["score"] = 0;
-    // $_SESSION["questions"] = get_questions();
-    // $_SESSION["current_q"] = array_pop($_SESSION["questions"]);
+ 
     $username = $_SESSION["username"];
     $new["state"] = "running";
     $new["score"] = 0;
