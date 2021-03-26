@@ -26,13 +26,9 @@
     
     function session_handler() {
         global $username, $data, $question_stack, $current_question; 
-
-        #for codd
-		#session_save_path("session");  
-
-		session_start();
-		$username = $_SESSION['username'];
-		$data = read_user_data($username);
+	session_start();
+	$username = $_SESSION['username'];
+	$data = read_user_data($username);
         $question_stack = get_question_stack($username);
         $current_question = get_current_question($username);
         #print_r($current_question);
