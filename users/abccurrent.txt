@@ -1,0 +1,2 @@
+a:7:{s:8:"question";s:42:"A computer has a keyboard with many _____?";s:6:"points";s:2:"50";s:6:"answer";s:4:"Keys";s:7:"choice1";s:4:"Keys";s:7:"choice2";s:5:"Mouse";s:7:"choice3";s:6:"Blocks";s:7:"choice4";s:9:"Circles
+";}

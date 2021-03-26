@@ -1,0 +1,10 @@
+What is the imaginary horizontal line that marks locations?,250,Latitude,Latitude,Longitude,Quadrant,Icicle
+Kim can walk 4 kilometers in one hour. How long does it take Kim to walk 18 kilometers?,250,4 hours and 30 minutes,5 hours,12 hours,4 hours and 30 minutes,6 hours and 30 minutes
+What is sublimation?,200,Solid to Gas,Gas to Soild,Liquid to Solid,Solid to Gas,Gas to liquid
+Which word is a synonym for the word: Provided?,200,Supplied,Supplied,Gathered,Needed,Unwanted
+What plays notes together at the same time?,150,Harmony,Rhythm,Melody,Harmony,Tone
+Which sport has to kick a ball?,150,Soccer,Basketball,Soccer,Football,Volleyball
+How many continents are on Earth?,100,Seven,Five,Six,Seven,Four
+Which is a Noun?,100,Clock,Red,Clock,Sing,Three
+A computer has a keyboard with many _____?,50,Keys,Keys,Mouse,Blocks,Circles
+A _____ line goes up and down.,50,Vertical,Horizontal,Left,Vertical,Right
