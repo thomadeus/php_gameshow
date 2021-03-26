@@ -16,14 +16,6 @@
         return $quiz;
     }
 
-    // function session_handler() {
-    //     global $username, $data;  // must be global to exist after function terminates
-	// 	#session_save_path("session");  // important fix to work with codd server
-	// 	session_start();
-	// 	$username = $_SESSION['username'];
-	// 	$data = read_user_data($username);
-    // }
-    
     function session_handler() {
         global $username, $data, $question_stack, $current_question; 
 	session_start();
@@ -167,14 +159,8 @@
 				} else {
 					return false;
 				}
-
 			}
-
 		}
-
 		return false;
-
 	}
-
-
 ?>
