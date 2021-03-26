@@ -25,24 +25,15 @@
 
     $new["state"] = "running";
     $new["score"] = 0;
-
-    #for CODD
-    #session_save_path("session");
-
     session_start();
     $_SESSION['username'] = $username;
-
     write_user_data($username, $new);
-    
+
     $question_stack = get_questions();
     $current_question = array_pop($question_stack);
-
-    #write_user_data($username, $new);
     store_question_stack($username, $question_stack);
     store_current_question($username, $current_question);
 
-    
     header('Location: gameplay.php');
     exit();
-
 ?>
