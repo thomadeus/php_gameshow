@@ -16,55 +16,6 @@
         return $quiz;
     }
 
-
-    // $quiz = array(array());
-    // array_pop($quiz);
-    // $qs = file("./QA.txt");
-    // for($i = 0; $i<count($qs); ++$i){
-    //     $info = explode(",", $qs[$i]);
-    //     $quiz["q".$i]["question"] = $info[0];
-    //     $quiz["q".$i]["points"] = $info[1];
-    //     $quiz["q".$i]["answer"] = $info[2];
-    //     $quiz["q".$i]["choice1"] = $info[3];
-    //     $quiz["q".$i]["choice2"] = $info[4];
-    //     $quiz["q".$i]["choice3"] = $info[5];
-    // }
-    // print_r($quiz);
-    // $curr = array_pop($quiz);
-    // echo "<br> <br> <br>";
-    // print_r($curr["question"]);
-    // echo "<br> <br> <br>";
-    // $curr = array_pop($quiz);
-    // print_r($curr["question"]);
-    // $curr = array_pop($quiz);
-    // print_r($curr["question"]);
-
-    // define('TENQS', "q1,q2,q3,q4,q5,q6,q7,q8,q9,q10");
-    // foreach(explode(',', TENQS) as $key => $array) {
-    //     foreach(explode(',', ))
-    // }
-    // $questions[] = array();
-    // $questions_file = file("./QA.txt");
-    // foreach($questions_file as $line)
-    // {
-    //     $info = explode(",", $line);
-    //     #print_r($info);
-    //     $questions[]["question"] = $info[0];
-    //     $questions[]["points"] = $info[1];
-    //     $questions[]["answer"] = $info[2];
-    //     $questions[]["choice1"] = $info[3];
-    //     $questions[]["choice2"] = $info[4];
-    //     $questions[]["choice3"] = $info[5];
-    // }
-    // $test["questions"] = $questions;
-    // print_r($test);
-    // echo "<br> <br>";
-    // $currQ = array_pop($test);
-    
-    // #$currQ = array_pop($test["questions"]);
-    // #$currQ = array_pop($test);
-    // print_r($currQ);
-
     // function session_handler() {
     //     global $username, $data;  // must be global to exist after function terminates
 	// 	#session_save_path("session");  // important fix to work with codd server
@@ -74,8 +25,11 @@
     // }
     
     function session_handler() {
-        global $username, $data, $question_stack, $current_question;  // must be global to exist after function terminates
-		#session_save_path("session");  // important fix to work with codd server
+        global $username, $data, $question_stack, $current_question; 
+
+        #for codd
+		session_save_path("session");  
+
 		session_start();
 		$username = $_SESSION['username'];
 		$data = read_user_data($username);
@@ -166,6 +120,7 @@
 		$leaderboard = file('leaderboards.txt');
 
 		$last_key = array_key_last($leaderboard);
+        print_r($last_key);
 		if ($leaderboard[$last_key] < $score) {
 			$leaderboard[$username] = $score;
 			arsort($leaderboard);
@@ -185,7 +140,7 @@
 			$scores = explode(PHP_EOL, $file_contents);
 			foreach ($scores as $score) {
         		$score = explode(":", $score);
-        		$score_list[$score[0]] = $score[1];
+        		$score_list[$score[0]] = $score[1]?? null;
 			}
 
 			arsort($score_list);  // sores values numerically
@@ -199,7 +154,7 @@
 		
 	}
 
-    	// BELOW: PASSWORD FILE FUNCTIONS
+    #PW check Function
 
 	function check_password($username, $password): bool {
 
