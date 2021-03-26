@@ -1,4 +1,4 @@
-<<?php
+<?php
     include 'util.php';
 ?>
 <!DOCTYPE html>
