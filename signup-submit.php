@@ -25,8 +25,13 @@
 
     $new["state"] = "running";
     $new["score"] = 0;
+
+    #for CODD
+    session_save_path("session");
+
     session_start();
     $_SESSION['username'] = $username;
+
     write_user_data($username, $new);
     
     $question_stack = get_questions();
