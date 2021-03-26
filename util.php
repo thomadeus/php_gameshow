@@ -28,7 +28,7 @@
         global $username, $data, $question_stack, $current_question; 
 
         #for codd
-		session_save_path("session");  
+		#session_save_path("session");  
 
 		session_start();
 		$username = $_SESSION['username'];

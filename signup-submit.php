@@ -27,7 +27,7 @@
     $new["score"] = 0;
 
     #for CODD
-    session_save_path("session");
+    #session_save_path("session");
 
     session_start();
     $_SESSION['username'] = $username;
@@ -40,7 +40,7 @@
     #write_user_data($username, $new);
     store_question_stack($username, $question_stack);
     store_current_question($username, $current_question);
-    #session_save_path("session");
+
     
     header('Location: gameplay.php');
     exit();
