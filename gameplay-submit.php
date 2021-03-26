@@ -4,7 +4,7 @@
     // echo $current_question["answer"];
     // echo $_POST["choice"];
 
-    #CORRECT CASEisset($_POST["choice"]) && 
+    #CORRECT CASE
     if( (isset($_POST["choice"])) && ($_POST["choice"] == $current_question["answer"])){
         $data["state"] = "runnning";
         $data["score"] = $data["score"] += (int)$current_question["points"];
@@ -21,7 +21,7 @@
             exit();
         }
 
-        #GET NEXT QUESTION AND PROCEEDS
+        #GET NEXT QUESTION AND PROCEED
         $current_question = array_pop($question_stack);
         write_user_data($username, $data);
         store_question_stack($username, $question_stack);
