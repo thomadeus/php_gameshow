@@ -1,4 +1,3 @@
-
 body{
     background-color: lightskyblue;
 }
@@ -72,7 +71,6 @@ div#game_board {
     overflow: hidden;
     flex-wrap: wrap;
 }
-
 div.flex_item {
     border: 5px outset white;
     border-radius: 25px;
@@ -133,8 +131,6 @@ div.question {
 input[type="submit"]:hover{
     border-color: #faf604;
 }
-
-
 
 
 .login-body {
@@ -219,5 +215,176 @@ input[type="submit"]:hover{
     cursor: pointer;
     outline: none;
   }
+  
+  
+  .leadboard {
+	display: block;
+	left: 408px;
+	margin: auto;
+	border: 3px solid crimson;
+	background-color: white;
+	opacity: 0.6;
+	height:700px;
+    width: 600px;
+}
+.leadusers1 {
+	display: block;
+	position: relative;
+	left: 40px;
+	top: 30;
+	color: red;
+	text-decoration: underline overline;
+	height: 45px;
+	width: 150px;
+	text-align: center;
+}
+.leadusers2 {
+	display: block;
+	position: relative;
+	left: 400;
+	bottom: 52;
+	color: red;
+	text-decoration: underline overline;
+	height: 45px;
+	width: 150px;
+	text-align: center;
+}
+.mm{
+	display: block;
+	position: absolute;
+	color: red;
+	text-decoration: underline overline;
+	text-align: center;
+	margin-bottom: 0;
+	margin: auto;
+	left: 550;
+}
+.mm:hover {
+	color: maroon;
+   -webkit-text-stroke: 1px red;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.mm:active {
+  color: black;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+	
+.headline {
+	display: block;
+	position: relative;
+	left: 0px;
+	margin: auto;
+	background-color: white;
+	opacity: 0.8;
+	height: 60px;
+	width: 355px;
+}
 
 
+.playb {
+	display: block;
+	border: 3px solid steelblue;
+	background-color: maroon;
+	opacity: 0.8;
+    width: 600px;
+	left: 200px;
+	margin: auto;
+}
+.playb:hover {
+  background-color: lightsteelblue;
+  color: white;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.playb:active {
+  background-color: navy;
+  color: black;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+.playb2 {
+	display: block;
+	border: 3px solid maroon;
+	background-color: goldenrod;
+	opacity: 0.8;
+    width: 250px;
+	left: 200px;
+	margin: auto;
+}
+.playb2:hover {
+  background-color: violet;
+  color: white;
+  transition-duration: 0.4s;
+  cursor: pointer;	
+}
+.playb2:active {
+  background-color: purple;
+  color: black;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+.rightb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 348px;
+	height: 650px;
+	z-index: -1;
+}
+
+.crowdr {
+	position: absolute;
+	top: 2;
+	right: 0;
+	width: 735px;
+	height: ;
+	z-index: -1;
+}
+.crowdr2 {
+	position: absolute;
+	top: 2;
+	right: 0;
+	width: 600px;
+	height: ;
+	z-index: -1;
+}
+.tryb1 {
+	display: block;
+	border: 3px solid white;
+	background-color: maroon;
+	width: 600px;
+	margin: auto;
+}
+.tryb1:hover {
+  background-color: red;
+  color: white;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.tryb1:active {
+  background-color: red;
+  color: black;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+.tryb2 {
+	display: block;
+	border: 3px solid white;
+	background-color: maroon;
+	width: 600px;
+	margin: auto;
+}
+.tryb2:hover {
+  background-color: red;
+  color: white;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.tryb2:active {
+  background-color: red;
+  color: black;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
